@@ -5,6 +5,7 @@ ruby '1.9.2'
 gem 'rails', '3.2.8'
 gem 'pg'
 gem 'thin'
+gem 'devise', '~> 2.1.2'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', '~> 2.1.3'
 
