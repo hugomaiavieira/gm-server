@@ -29,6 +29,7 @@ group :test, :development do
   gem 'factory_girl_rails', '~> 3.5.0'
   gem 'spork-rails', '~> 3.2.0'
   gem 'sqlite3'
+  gem 'database_cleaner'
 end
 
 group :development do
