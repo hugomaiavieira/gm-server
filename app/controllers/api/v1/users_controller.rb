@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(params[:user])
     if user.save
-      render status: 200, json: { token: user.authentication_token }
+      render status: 200, json: { token: user.authentication_token, success: true }
     else
       render status: 400, json: user.errors
     end
@@ -22,7 +22,7 @@ class Api::V1::UsersController < ApplicationController
       render status: 401, json: { message: 'Invalid email or password.' }
     else
       user.reset_authentication_token! # devise method: http://migre.me/aDm83
-      render status: 200, json: { token: user.authentication_token }
+      render status: 200, json: { token: user.authentication_token, success: true }
     end
   end
 end

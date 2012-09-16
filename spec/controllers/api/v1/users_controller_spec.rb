@@ -15,6 +15,7 @@ describe Api::V1::UsersController do
       response.status.should == 200
       response.headers['Content-Type'].should == "application/json; charset=utf-8"
       response.body.should include('"token":"')
+      response.body.should include('"success":true')
     end
   end
 
@@ -29,6 +30,7 @@ describe Api::V1::UsersController do
         response.status.should == 200
         response.headers['Content-Type'].should == "application/json; charset=utf-8"
         response.body.should include('"token":"')
+        response.body.should include('"success":true')
         @user.reload.authentication_token.should_not == 'blablabla'
       end
     end
