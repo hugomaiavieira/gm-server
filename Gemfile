@@ -30,6 +30,7 @@ group :test, :development do
   gem 'spork-rails', '~> 3.2.0'
   gem 'sqlite3'
   gem 'database_cleaner'
+  gem 'valid_attribute'
 end
 
 group :development do

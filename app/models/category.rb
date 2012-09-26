@@ -1,9 +1,10 @@
 class Category < ActiveRecord::Base
   self.primary_key = :id
 
-  attr_accessible :id, :name, :user_id
-
   belongs_to :user
+  has_many :spents
+
+  attr_accessible :id, :name, :user_id
 
   validates :id, uniqueness: true
   validate :name_uniqueness
