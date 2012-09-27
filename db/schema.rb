@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20120926122354) do
     t.float    "amount"
     t.string   "description"
     t.date     "date"
+    t.string   "category_id"
     t.integer  "user_id"
-    t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

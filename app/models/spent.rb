@@ -4,7 +4,7 @@ class Spent < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
 
-  attr_accessible :amount, :date, :description, :user_id, :category_id
+  attr_accessible :id, :amount, :date, :description, :user_id, :category_id
 
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :date, presence: true

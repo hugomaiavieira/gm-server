@@ -9,6 +9,9 @@ Gm::Application.routes.draw do
 
       #= Categories
       post 'categories/sync' => 'categories#sync'
+
+      #= Spents
+      post 'spents/sync' => 'spents#sync'
     end
   end
 

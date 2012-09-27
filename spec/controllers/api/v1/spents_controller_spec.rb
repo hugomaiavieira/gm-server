@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::V1::CategoriesController do
+describe Api::V1::SpentsController do
   context 'sync' do
     before(:all) do
       User.delete_all # TODO: use database cleaner to do this
@@ -20,18 +20,18 @@ describe Api::V1::CategoriesController do
     end
 
     context 'with valid token' do
-      it 'without categories' do
+      it 'without spents' do
         post 'sync', token: '123'
         response.status.should == 200
         response.body.should == ' '
       end
 
-      it 'with categories' do
-        post 'sync', token: '123', categories: '[{"id":"234iu","name":"gas"}]'
+      it 'with spents' do
+        post 'sync', token: '123', spents: '[{"id":"234iu","amount":"5.4","date":"2012-05-03"}]'
         response.status.should == 200
         response.body.should == ' '
-        Category.all.count == 1
-        Category.first.name ==  'gas'
+        Spent.all.count == 1
+        Spent.first.amount ==  5.4
       end
     end
   end

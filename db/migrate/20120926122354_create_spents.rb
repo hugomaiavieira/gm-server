@@ -5,8 +5,8 @@ class CreateSpents < ActiveRecord::Migration
       t.float :amount
       t.string :description
       t.date :date
+      t.string :category_id
       t.references :user
-      t.references :category
 
       t.timestamps
     end
